@@ -59,7 +59,7 @@ class SleepTrackerViewModel(
         }
     }
 
-    private fun onStartTracking() {
+    fun onStartTracking() {
         uiScope.launch {
             val newNight = SleepNight()
             insert(newNight)
@@ -73,7 +73,7 @@ class SleepTrackerViewModel(
         }
     }
 
-    private fun onStopTracking() {
+    fun onStopTracking() {
         uiScope.launch {
             val oldNight = tonight.value ?: return@launch
             oldNight.endTimeMilli = System.currentTimeMillis()
@@ -87,7 +87,7 @@ class SleepTrackerViewModel(
         }
     }
 
-    private fun onClear() {
+    fun onClear() {
         uiScope.launch {
             clear()
             tonight.value = null
