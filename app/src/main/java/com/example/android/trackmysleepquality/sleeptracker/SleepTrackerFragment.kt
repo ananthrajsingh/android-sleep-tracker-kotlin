@@ -63,6 +63,14 @@ class SleepTrackerFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
+        val sleepTrackerViewModel =
+                ViewModelProviders.of(
+                        this, viewModelFactory).get(SleepTrackerViewModel::class.java)
+
+        binding.sleepTrackerViewModel = sleepTrackerViewModel
+
+        binding.setLifecycleOwner(this)
+
         // Add an Observer on the state variable for showing a Snackbar message
         // when the CLEAR button is pressed.
         sleepTrackerViewModel.showSnackBarEvent.observe(this, Observer {
