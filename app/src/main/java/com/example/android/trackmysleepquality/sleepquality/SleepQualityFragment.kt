@@ -51,6 +51,7 @@ class SleepQualityFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
+
         val arguments = SleepQualityFragmentArgs.fromBundle(arguments!!)
 
         // Create an instance of the ViewModel Factory.
