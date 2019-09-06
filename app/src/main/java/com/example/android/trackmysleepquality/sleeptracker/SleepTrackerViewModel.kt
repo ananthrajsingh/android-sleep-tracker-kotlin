@@ -200,7 +200,6 @@ class SleepTrackerViewModel(
     val nightsString = Transformations.map(nights) { nights ->
         formatNights(nights, application.resources)
     }
-
     /**
      * If tonight has not been set, then the START button should be visible.
      */
@@ -240,7 +239,6 @@ class SleepTrackerViewModel(
      *
      * This is private because we don't want to expose setting this value to the Fragment.
      */
-
     private val _navigateToSleepQuality = MutableLiveData<SleepNight>()
     /**
      * Call this immediately after calling `show()` on a toast.
@@ -359,6 +357,7 @@ class SleepTrackerViewModel(
 
             // And clear tonight since it's no longer in the database
             tonight.value = null
+            _showOnSnackBarEvent.value = true
         }
 
         // Show a snackbar message, because it's friendly.
