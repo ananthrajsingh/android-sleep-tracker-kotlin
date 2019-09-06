@@ -21,10 +21,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-
-/**
- * Defines methods for using the SleepNight class with Room.
- */
 @Dao
 interface SleepDatabaseDao {
 
